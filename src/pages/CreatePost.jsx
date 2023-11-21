@@ -21,7 +21,8 @@ export default function CreatePost() {
     const response = await fetch('https://note-app-back-end-idcq.onrender.com/post', {
         method: 'POST',
         body: data,
-        credentials:'include',
+        //credentials:'include',
+        headers: { 'Content-Type':'application/json' },
     })
     if(response.ok){
         setRedirect(true);
