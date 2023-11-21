@@ -21,7 +21,7 @@ export default function CreatePost() {
     const response = await fetch('https://note-app-back-end-idcq.onrender.com/post', {
         method: 'POST',
         body: data,
-        //credentials:'include',
+        credentials:'include',
         headers: {  }
     })
     if(response.ok){
