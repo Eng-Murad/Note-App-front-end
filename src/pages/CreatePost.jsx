@@ -12,7 +12,6 @@ export default function CreatePost() {
     const [redirect, setRedirect] = useState(false);
 
     async function createNewPost (ev){
-<<<<<<< HEAD
         const data = new FormData();
         data.set('title', title);
         data.set('summary', summary);
