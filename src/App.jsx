@@ -9,7 +9,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import { UserContextProvider } from './userContext'
 import CreatePost from './pages/CreatePost'
-import Postpage from './pages/postPage'
+import Postpage from './pages/PostPage'
 import EditPost from './pages/EditPost'
 
 function App() {

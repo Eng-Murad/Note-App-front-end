@@ -5,7 +5,7 @@ import { UserContext } from "../userContext";
 
 
 
-export default function Postpage (){
+export default function PostPage (){
     const [postInfo, setPostInfo] = useState(null);
     const {userInfo} = useContext(UserContext);
     const {id} = useParams();
