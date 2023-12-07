@@ -27,23 +27,6 @@ export default function CreatePost() {
         if(response.ok){
             setRedirect(true);
         }
-=======
-    const data = new FormData();
-    data.set('title', title);
-    data.set('summary', summary);
-    data.set('content', content);
-    data.set('file', files[0]);
-    ev.preventDefault();
-    const response = await fetch('https://note-app-back-end-idcq.onrender.com/post', {
-        method: 'POST',
-        body: data,
-        credentials:'include',
-        headers: {  }
-    })
-    if(response.ok){
-        setRedirect(true);
->>>>>>> a3e0cea2aff788dadf943b4cf2519f221de1d67f
-    }
 }
 
     
