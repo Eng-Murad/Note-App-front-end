@@ -2,7 +2,7 @@ import React from 'react';
 
 function AlignmentExample() {
   return (
-    <footer className="bg-light d-flex align-items-center justify-content-center" style={{ height: '10vh' }}>
+    <footer className="d-flex align-items-center justify-content-center" style={{ height: '10vh' }}>
       <div className="text-center p-3">
         <p className="mb-0">
           Author: Murad Saad

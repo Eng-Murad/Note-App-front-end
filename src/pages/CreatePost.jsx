@@ -11,8 +11,21 @@ export default function CreatePost() {
     const [files, setFiles] = useState('');
     const [redirect, setRedirect] = useState(false);
 
-    async function createNewPost(ev) {
-        // ... (remaining code remains unchanged)
+    async function createNewPost (ev){
+        const data = new FormData();
+        data.set('title', title);
+        data.set('summary', summary);
+        data.set('content', content);
+        data.set('file', files[0]);
+        ev.preventDefault();
+        const response = await fetch('https://note-app-back-end-idcq.onrender.com/post', {
+            method: 'POST',
+            body: data,
+            credentials:'include',
+        })
+        if(response.ok){
+            setRedirect(true);
+        }
     }
 
     if (redirect) {
@@ -20,7 +33,11 @@ export default function CreatePost() {
     }
 
     return (
-        <div style={{  flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '50vh', marginTop:'150px', }}>
+        <div>
+        <h2 style={{
+            textAlign: "center",
+          }}>Create new post</h2>
+        <div style={{  flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '50vh', marginTop:'100px', }}>
             <form onSubmit={createNewPost}>
                 <input type="title" placeholder="Title" value={title} onChange={ev => setTitle(ev.target.value)} className="form-control mb-3" />
                 <input type="summary" placeholder="Summary" value={summary} onChange={ev => setSummary(ev.target.value)} className="form-control mb-3" />
@@ -28,6 +45,7 @@ export default function CreatePost() {
                 <Editor onChange={setContent} value={content} />
                 <button style={{ marginTop: '5px' }} className="btn btn-primary">Create Post</button>
             </form>
+        </div>
         </div>
     );
 }
